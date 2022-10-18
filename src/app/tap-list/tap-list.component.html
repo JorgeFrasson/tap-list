@@ -1,0 +1,44 @@
+<div class="tap-container">
+    <div class="tap-object" *ngFor="let tap of tapList">
+        <div class="tap-image-row">
+            <img src="{{tap.imageUrl}}" alt="">
+        </div>
+        <div class="tap-name-row">
+            {{tap.name}}
+        </div>
+        <div class="tap-price">
+            <div class="volume-info">
+                <div class="coin-sign">M$</div>
+                <div class="volume">
+                    {{tap.volume}}ml
+                </div>
+            </div>
+            <div class="price-value">
+                {{tap.price}}
+            </div>
+        </div>  
+        <div class="tap-properties-row">
+            <p>IBU: {{tap.ibu}}</p>
+            <p>ABV: {{tap.abv}}%</p>
+        </div>
+        <div class="brewery-info-row">
+            <div class="tap-info">
+                <div class="brewery-name title">
+                    Cervejaria
+                </div>
+                <div class="brewery-name value">
+                    {{tap.brewery}}
+                </div>
+                <div class="category-name title">
+                    Cervejaria
+                </div>
+                <div class="category-name value">
+                    {{tap.category}}
+                </div>
+            </div>
+            <div class="tap-qr-code">
+                <img src="{{tap.qrCodeUrl}}" alt="">
+            </div>
+        </div>
+    </div>    
+</div>

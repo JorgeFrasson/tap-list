@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TapListComponent } from './tap-list/tap-list.component';
+import { TapFormComponent } from './tap-form/tap-form.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TapListComponent,
+    TapFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

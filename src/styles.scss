@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import '/src/assets/scss/modules/_fonts.scss';
+
+// primary font
+$primary_font: 'FilsonPro';
+
+// font weight
+$regular: 400;
+
+body {
+    background-color: black;
+    font-family: $primary_font;
+    margin: 0;
+}
