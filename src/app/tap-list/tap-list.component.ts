@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StatusService } from '../shared/status.service';
 
 @Component({
   selector: 'app-tap-list',
@@ -7,58 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TapListComponent implements OnInit {
 
-  tapList: any[] = [
-    {
-      name: "Malvadinha",
-      ibu: 50,
-      abv: 5.7,
-      price: "3,75",
-      volume: 100,
-      brewery: "MERMAID",
-      category: "AMERICAN IPA",
-      imageUrl: "/assets/img/image 43.png",
-      qrCodeUrl: "/assets/img/qr-code.png"
-    },
-    {
-      name: "Boiobi",
-      ibu: 50,
-      abv: 5.7,
-      price: "3,75",
-      volume: 100,
-      brewery: "MERMAID",
-      category: "AMERICAN IPA",
-      imageUrl: "/assets/img/image 44.png",
-      qrCodeUrl: "/assets/img/qr-code.png"
-    },
-    {
-      name: "Red Beard",
-      ibu: 50,
-      abv: 5.7,
-      price: "12,75",
-      volume: 100,
-      brewery: "MERMAID",
-      category: "AMERICAN IPA",
-      imageUrl: "/assets/img/image 45.png",
-      qrCodeUrl: "/assets/img/qr-code.png"
-    },
-    {
-      name: "Golden Gate",
-      ibu: 50,
-      abv: 5.7,
-      price: "3,00",
-      volume: 100,
-      brewery: "MERMAID",
-      category: "AMERICAN IPA",
-      imageUrl: "/assets/img/image 46.png",
-      qrCodeUrl: "/assets/img/qr-code.png"
-    },
-      
-  ]
+  tapList: any[] = [];
 
-
-  constructor() { }
+  constructor(private tapService: StatusService) { }
 
   ngOnInit(): void {
+    this.getTapList();
+  }
+  
+  async getTapList(){
+    await this.tapService.getStatus()
+        .subscribe((response) => {
+          const res = JSON.parse(JSON.stringify(response));
+          this.tapList = res;
+          console.log(this.tapList);
+    });
   }
 
 }

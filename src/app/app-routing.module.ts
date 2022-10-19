@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TapListComponent } from './tap-list/tap-list.component';
 import { AppComponent } from './app.component';
+import { TapFormComponent } from './tap-form/tap-form.component';
 
 const routes: Routes = [
   {
@@ -10,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'tap-form',
-    component: AppComponent
+    component: TapFormComponent
   },
   {
     path: '',
